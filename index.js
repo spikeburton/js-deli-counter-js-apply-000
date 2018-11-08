@@ -1,6 +1,9 @@
-function takeANumber(line, name) {
-  line.push(name)
-  return `Welcome, ${name}. You are number ${line.length} in line.`
+var count = 0
+
+function takeANumber(line) {
+  count++;
+  line.push(count)
+  return `Welcome, number ${count}. You are number ${count} in line.`
 }
 
 function nowServing(line) {
@@ -16,15 +19,15 @@ function currentLine(line) {
   if(line.length == 0) {
     return "The line is currently empty."
   } else {
-    var str = "The line is currently: "
+    return "The line is currently: " + count + " people long"
 
-    let i = 0
-    do {
-      str += `${i+1}. ${line[i]}, `
-      i++
-    } while (i < line.length-1)
-    str += `${i+1}. ${line[i]}`
+    // let i = 0
+    // do {
+    //   str += `${i+1}. ${line[i]}, `
+    //   i++
+    // } while (i < line.length-1)
+    // str += `${i+1}. ${line[i]}`
 
-    return str
+    // return str
   }
 }
